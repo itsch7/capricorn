@@ -28,7 +28,7 @@ if (strpos($currentUrl, 'faq.php') !== false) {
 
 <footer class="footer">
 <?php if (!$hideSection): ?>
-	echo "<div class='cta bg-image bg-dark pt-4 pb-5 mb-0'
+	<div class='cta bg-image bg-dark pt-4 pb-5 mb-0'
 style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
 <div class='container'>
     <div class='row justify-content-center'>
@@ -38,9 +38,9 @@ style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
                 
             </div><!-- End .text-center -->
 
-            <form action='#'>
+            <form method="post" action="send_email.php">
                 <div class='input-group input-group-round'>
-                    <input type='email' class='form-control form-control-white'
+                    <input name="email" type='email' class='form-control form-control-white'
                         placeholder='Enter your Email Address' aria-label='Email Adress' required>
                     <div class='input-group-append'>
                         <button class='btn btn-primary' type='submit'><span>Subscribe</span><i
