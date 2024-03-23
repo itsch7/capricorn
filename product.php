@@ -112,10 +112,12 @@ if ($resultProd->num_rows > 0) {
 
                             <div class="col-md-6">
                                 <?php
+                                $description = '';
                                 // Check if any records are fetched
                                 if ($resultSingleProd->num_rows > 0) {
                                     // Output data of each row
                                     while ($row = $resultSingleProd->fetch_assoc()) {
+                                        $description = $row["Description"];
 
                                         echo "
                                         <div class='product-details'>
@@ -193,24 +195,15 @@ if ($resultProd->num_rows > 0) {
                                 aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
                                     <h3>Product Information</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-                                        volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra
-                                        non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis
-                                        fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque
-                                        felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer
-                                        ligula vulputate sem tristique cursus. </p>
-                                    <ul>
-                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                    </ul>
+                                    <?php
+                                // Check if any records are fetched
+                                    // Output data of each row
 
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-                                        volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra
-                                        non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis
-                                        fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque
-                                        felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer
-                                        ligula vulputate sem tristique cursus. </p>
+                                        echo $description;
+                              
+
+                                     ?>
+                                    
                                 </div><!-- End .product-desc-content -->
                             </div><!-- .End .tab-pane -->
                             <div class="tab-pane fade" id="product-info-tab" role="tabpanel"
