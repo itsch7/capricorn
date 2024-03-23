@@ -61,5 +61,8 @@
         .icon-header-phone{
             display:none;
         }
+        .logo{
+            margin:0;
+        }
     }
 </style>

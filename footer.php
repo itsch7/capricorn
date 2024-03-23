@@ -18,8 +18,7 @@ $resultComp = $conn->query($sqlComp);
 				<div class="col-sm-10 col-md-8 col-lg-6">
 					<div class="cta-heading text-center">
 						<h3 class="cta-title text-white">Get The Latest Deals</h3><!-- End .cta-title -->
-						<p class="cta-desc text-white">and receive <span class="font-weight-normal">$20 coupon</span>
-							for first shopping</p><!-- End .cta-desc -->
+						
 					</div><!-- End .text-center -->
 
 					<form action="#">
@@ -48,27 +47,7 @@ $resultComp = $conn->query($sqlComp);
 						<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros
 							eu erat. </p>
 
-						<div class="widget-call">
-							<i class="icon-phone"></i>
-							Got Question? Call us 24/7
-							<?php
-
-
-
-
-
-							if ($resultComp->num_rows > 0) {
-								while ($row = $resultComp->fetch_assoc()) {
-
-									echo "<a href='tel:#'>+0123 456 789</a>";
-
-								}
-							}
-
-
-							?>
-
-						</div><!-- End .widget-call -->
+				
 					</div><!-- End .widget about-widget -->
 				</div><!-- End .col-sm-6 col-lg-3 -->
 
@@ -88,25 +67,26 @@ $resultComp = $conn->query($sqlComp);
 
 				<div class="col-sm-6 col-lg-3">
 					<div class="widget">
-						<h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+					<div class="widget-call">
+							<i class="icon-phone"></i>
+							Got Question? Call us 24/7
+							<?php
+							if ($resultComp->num_rows > 0) {
+								while ($row = $resultComp->fetch_assoc()) {
 
-						<ul class="widget-list">
-							<li><a href="#">Terms and conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul><!-- End .widget-list -->
+									echo "<a href='tel:#'>+0123 456 789</a>";
+
+								}
+							}
+
+
+							?>
+
+						</div><!
 					</div><!-- End .widget -->
 				</div><!-- End .col-sm-6 col-lg-3 -->
 
-				<div class="col-sm-6 col-lg-3">
-					<div class="widget">
-						<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
-
-						<ul class="widget-list">
-							<li><a href="#">Sign In</a></li>
-
-						</ul><!-- End .widget-list -->
-					</div><!-- End .widget -->
-				</div><!-- End .col-sm-6 col-lg-3 -->
+			
 			</div><!-- End .row -->
 		</div><!-- End .container -->
 	</div><!-- End .footer-middle -->

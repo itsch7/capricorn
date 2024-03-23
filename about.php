@@ -17,15 +17,14 @@ include 'header-files.php';
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">About us</li>
                     </ol>
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
             <div class="container">
-	        	<div class="page-header page-header-big text-center" style="background-image: url('assets/images/about-header-bg.jpg')">
-        			<h1 class="page-title text-white">About us<span class="text-white">Who we are</span></h1>
+	        	<div class="page-header  text-center" style="background-image: url(''assets/images/page-header-bg.jpg'');margin-bottom:40px">
+        			<h1 class="page-title ">About us<span >Who we are</span></h1>
 	        	</div><!-- End .page-header -->
             </div><!-- End .container -->
 

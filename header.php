@@ -3,7 +3,7 @@ include ('dbcon.php');
 ?>
 <header class="header header-intro-clearance header-4">
     <?php
-       $catArray =array();
+    $catArray = array();
 
     // SQL query to fetch data from a table
     $sql = "SELECT * FROM categories";
@@ -51,7 +51,8 @@ include ('dbcon.php');
                     <form action="#" method="get">
                         <div class="header-search-wrapper search-wrapper-wide">
                             <label for="q" class="sr-only">Search</label>
-                            <button class="btn btn-primary"  onclick="window.location.href = 'search.php';"><i class="icon-search"></i></button>
+                            <button class="btn btn-primary" onclick="window.location.href = 'search.php'"><i
+                                    class="icon-search"></i></button>
                             <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..."
                                 required>
                         </div><!-- End .header-search-wrapper -->
@@ -69,7 +70,7 @@ include ('dbcon.php');
                     if ($resultComp->num_rows > 0) {
                         while ($row = $resultComp->fetch_assoc()) {
 
-                            echo "<p><a class='icon-header-phone' href='tel:#'><i class='icon-phone' ></i>Call: {$row["phone"]}</a>
+                            echo "<p><a class='icon-header-phone' href='tel:#'><i class='icon-phone'  style='margin-right:7px'></i>Call: {$row["phone"]}</a>
         </p>";
 
                         }
@@ -78,7 +79,7 @@ include ('dbcon.php');
 
                     ?>
 
-                 
+
 
 
                 </div><!-- End .compare-dropdown -->
@@ -102,17 +103,17 @@ include ('dbcon.php');
                     <div class="dropdown-menu">
                         <nav class="side-nav">
                             <ul class="menu-vertical sf-arrows">
-                                <?php
-                                // Check if any records are fetched
-                                if ($result->num_rows > 0) {
-                                    // Output data of each row
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<li class='item-lead'><a href='#'>{$row["Name"]}</a> </li>"; // Wrap array element access with curly braces {}
-                                    }
-                                } else {
-                                    echo "<li>No categories found.</li>";
-                                }
-                                ?>
+                            <?php
+                        // Check if any records are fetched
+                        if ($result->num_rows > 0) {
+                            // Output data of each row
+                            foreach ($catArray as $cat) {
+                                echo "<li><a> {$cat["Name"]} </a></li>"; // Wrap array element access with curly braces {}
+                            }
+                        } else {
+                            echo "<li>No categories found.</li>";
+                        }
+                        ?>
                                 <!-- <li class="item-lead"><a href="#">Daily offers</a></li>
                                        <li class="item-lead"><a href="#">Gift Ideas</a></li>
                                        <li><a href="#">Beds</a></li>
@@ -136,22 +137,22 @@ include ('dbcon.php');
                         <li class="megamenu-container active">
                             <a href="index.php" class="sf-with-ul">Home</a>
                         </li>
-                      
+
                         <li>
+                            <a href="about.php" class="sf-with-ul">About</a>
+
+                        </li>
+                        <li>
+                            <a href="contact.php" class="sf-with-ul">Contact</a>
+
+                        </li>
+                        <li><a href="faq.php">FAQs</a></li>
+                        <!-- <li>
                             <a href="#" class="sf-with-ul sf-with-ul-pg">Pages</a>
 
                             <ul>
-                                <li>
-                                    <a href="about.php" class="sf-with-ul">About</a>
-
-                                </li>
-                                <li>
-                                    <a href="contact.php" class="sf-with-ul">Contact</a>
-
-                                </li>
-                                <li><a href="faq.php">FAQs</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
 
                     </ul><!-- End .menu -->
@@ -168,11 +169,12 @@ include ('dbcon.php');
     <div class="mobile-menu-wrapper">
         <span class="mobile-menu-close"><i class="icon-close"></i></span>
 
-        <form action="#" method="get" class="mobile-search">
+        <form class="mobile-search">
             <label for="mobile-search" class="sr-only">Search</label>
             <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..."
                 required>
-            <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+            <button class="btn btn-primary" onclick="window.location.href = 'search.php'" ><i
+                    class="icon-search"></i></button>
         </form>
 
         <ul class="nav nav-pills-mobile nav-border-anim" role="tablist">
@@ -195,31 +197,21 @@ include ('dbcon.php');
                             <a href="index.php">Home</a>
 
                         </li>
+
+
+
+
                         <li>
-                            <a href="category.html">Shop</a>
+                            <a href="about.php">About</a>
+
 
                         </li>
                         <li>
-                            <a href="product.html" class="sf-with-ul">Product</a>
+                            <a href="contact.php">Contact</a>
+
 
                         </li>
-                        <li>
-                            <a href="#">Pages</a>
-                            <ul>
-                                <li>
-                                    <a href="about.php">About</a>
-
-
-                                </li>
-                                <li>
-                                    <a href="contact.php">Contact</a>
-
-
-                                </li>
-                                <li><a href="faq.php">FAQs</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="faq.php">FAQs</a></li>
 
 
                     </ul>
@@ -232,8 +224,8 @@ include ('dbcon.php');
                         // Check if any records are fetched
                         if ($result->num_rows > 0) {
                             // Output data of each row
-                            forEach($catArray as $cat) {
-                                echo "<li><a href='#'> {$cat["Name"]} </a></li>"; // Wrap array element access with curly braces {}
+                            foreach ($catArray as $cat) {
+                                echo "<li><a > {$cat["Name"]} </a></li>"; // Wrap array element access with curly braces {}
                             }
                         } else {
                             echo "<li>No categories found.</li>";
@@ -256,11 +248,6 @@ include ('dbcon.php');
 
         </div><!-- End .tab-content -->
 
-        <div class="social-icons">
-            <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-            <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-            <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
-            <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
-        </div><!-- End .social-icons -->
+     
     </div><!-- End .mobile-menu-wrapper -->
 </div><!-- End .mobile-menu-container -->
