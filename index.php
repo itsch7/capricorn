@@ -1312,9 +1312,17 @@ $resultFeatured= $conn->query($sqlFeatured);
                 <div class="row no-gutters bg-white newsletter-popup-content">
                     <div class="col-xl-3-5col col-lg-7 banner-content-wrap">
                         <div class="banner-content text-center">
-                            <img src="assets/images/popup/newsletter/logo.png" class="logo" alt="logo" width="60" height="15">
+                            <!-- <img src="assets/images/popup/newsletter/logo.png" class="logo" alt="logo" width="60" height="15">
+                         -->
+                         
+                <a href="index.php" class="logo" style="font-size:36px">
+                    <!-- <img src="assets/images/demos/demo-4/logo.png" alt="Molla Logo" width="105" height="25">
+                            -->
+                    𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊
+                </a>
+
                             <h2 class="banner-title">get <span>25<light>%</light></span> off</h2>
-                            <p>Subscribe to the Molla eCommerce newsletter to receive timely updates from your favorite products.</p>
+                            <p>Subscribe to the Capricorn Store newsletter to receive timely updates from your favorite products.</p>
                             <form action="#">
                                 <div class="input-group input-group-round">
                                     <input type="email" class="form-control form-control-white" placeholder="Your Email Address" aria-label="Email Adress" required>
