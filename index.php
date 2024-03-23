@@ -175,7 +175,6 @@ $resultFeatured= $conn->query($sqlFeatured);
                                         <h3 class='product-title'><a href='product.php?id=". $row["ProductID"] . "'>{$row["ProductName"]}</h3>
                                         <div class='product-price'>
                                             <span class='new-price'>$ {$row["Price"]}</span>
-                                            <span class='old-price'>was $ {$row["Price"]}</span>
 
                                         </div>
                                    

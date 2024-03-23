@@ -9,32 +9,52 @@ $resultComp = $conn->query($sqlComp);
 
 
 ?>
+<?php
+// Get the current URL
+$currentUrl = $_SERVER['REQUEST_URI'];
+
+// Check if the URL contains "contact.php"
+if (strpos($currentUrl, 'faq.php') !== false) {
+    // Don't show the specific section
+    $hideSection = true;
+} else {
+    // Show the specific section
+    $hideSection = false;
+}
+?>
+
+<!-- Your HTML content -->
+
 
 <footer class="footer">
-	<div class="cta bg-image bg-dark pt-4 pb-5 mb-0"
-		style="background-image: url(assets/images/demos/demo-4/bg-5.jpg);">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-sm-10 col-md-8 col-lg-6">
-					<div class="cta-heading text-center">
-						<h3 class="cta-title text-white">Get The Latest Deals</h3><!-- End .cta-title -->
-						
-					</div><!-- End .text-center -->
+<?php if (!$hideSection): ?>
+	echo "<div class='cta bg-image bg-dark pt-4 pb-5 mb-0'
+style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
+<div class='container'>
+    <div class='row justify-content-center'>
+        <div class='col-sm-10 col-md-8 col-lg-6'>
+            <div class='cta-heading text-center'>
+                <h3 class='cta-title text-white'>Get The Latest Deals</h3><!-- End .cta-title -->
+                
+            </div><!-- End .text-center -->
 
-					<form action="#">
-						<div class="input-group input-group-round">
-							<input type="email" class="form-control form-control-white"
-								placeholder="Enter your Email Address" aria-label="Email Adress" required>
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="submit"><span>Subscribe</span><i
-										class="icon-long-arrow-right"></i></button>
-							</div><!-- .End .input-group-append -->
-						</div><!-- .End .input-group -->
-					</form>
-				</div><!-- End .col-sm-10 col-md-8 col-lg-6 -->
-			</div><!-- End .row -->
-		</div><!-- End .container -->
-	</div><!-- End .cta -->
+            <form action='#'>
+                <div class='input-group input-group-round'>
+                    <input type='email' class='form-control form-control-white'
+                        placeholder='Enter your Email Address' aria-label='Email Adress' required>
+                    <div class='input-group-append'>
+                        <button class='btn btn-primary' type='submit'><span>Subscribe</span><i
+                                class='icon-long-arrow-right'></i></button>
+                    </div><!-- .End .input-group-append -->
+                </div><!-- .End .input-group -->
+            </form>
+        </div><!-- End .col-sm-10 col-md-8 col-lg-6 -->
+    </div><!-- End .row -->
+</div><!-- End .container -->
+</div><!-- End .cta -->";
+        <!-- Content of the section you want to show -->
+    <?php endif; ?>
+
 	<div class="footer-middle">
 		<div class="container">
 			<div class="row">
@@ -56,11 +76,9 @@ $resultComp = $conn->query($sqlComp);
 						<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
 						<ul class="widget-list">
-							<li><a href="about.html">About us</a></li>
-							<li><a href="category.html">Shop</a></li>
-							<li><a href="product.html">Products</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="contact.html">Contact us</a></li>
+							<li><a href="about.php">About us</a></li>
+							<li><a href="faq.php">FAQ</a></li>
+							<li><a href="contact.php">Contact us</a></li>
 						</ul><!-- End .widget-list -->
 					</div><!-- End .widget -->
 				</div><!-- End .col-sm-6 col-lg-3 -->
@@ -74,7 +92,7 @@ $resultComp = $conn->query($sqlComp);
 							if ($resultComp->num_rows > 0) {
 								while ($row = $resultComp->fetch_assoc()) {
 
-									echo "<a href='tel:#'>+0123 456 789</a>";
+									echo "<a href='tel:#'> {$row["phone"]}</a>";
 
 								}
 							}

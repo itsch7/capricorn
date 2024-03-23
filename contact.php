@@ -119,7 +119,9 @@ include 'header-files.php';
 
                 
                 </div><!-- End .container -->
-            	<div id="map"></div><!-- End #map -->
+            	<div id="map">
+					
+				</div><!-- End #map -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 
