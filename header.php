@@ -47,8 +47,8 @@ include ('dbcon.php');
 
             <div class="header-center">
                 <div class="header-search header-search-extended header-search-visible d-none d-lg-block">
-                    <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
-                    <form >
+                    <a href="product.php" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                    <form action="search.php">
                         <div class="header-search-wrapper search-wrapper-wide">
                             <label for="q" class="sr-only">Search</label>
                             <button class="btn btn-primary" onclick="window.location.href = 'search.php'"><i
@@ -169,7 +169,7 @@ include ('dbcon.php');
     <div class="mobile-menu-wrapper">
         <span class="mobile-menu-close"><i class="icon-close"></i></span>
 
-        <form class="mobile-search">
+        <form action="search.php" class="mobile-search">
             <label for="mobile-search" class="sr-only">Search</label>
             <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..."
                 required>
