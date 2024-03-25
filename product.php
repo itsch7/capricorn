@@ -305,13 +305,12 @@ include 'footer-files.php';
             e.preventDefault();
         });
         $('.btn-product-gallery').on('click', function (e) {
-    e.preventDefault(); // Prevent the default action of the button click
+    e.preventDefault(); 
     console.log("hi");
 
-    // Open Magnific Popup
     $.magnificPopup.open({
         items: {
-            src: $('#product-zoom').attr('data-image') // Get the href attribute of the element with ID 'product-zoom'
+            src: $('#product-zoom').attr('data-image') 
         },
         type: 'image',
         gallery: {
