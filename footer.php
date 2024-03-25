@@ -62,14 +62,13 @@ if (strpos($currentUrl, 'faq.php') !== false) {
 					<div class="widget widget-about">
 						<div class="widget-footer">
 							<a href="#">
-								<p class='logo logo-foo' style="font-size:28px;margin-bottom:0;line-height: 36px;">𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊</p>
+								<p class='logo logo-foo' style="font-size:28px;margin-bottom:0;line-height: 36px; color:#3398fd">𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊</p>
 	
 							</a>
-							<span style="color: #3398fd;">We deliver the best</span>
+							<span style="color:#ccc;">We deliver the best</span>
 
 						</div>
-						<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros
-							eu erat. </p>
+					
 
 				
 					</div><!-- End .widget about-widget -->

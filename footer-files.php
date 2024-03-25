@@ -11,6 +11,7 @@
     <script src="assets/js/jquery.plugin.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
+
     <!-- Main JS File -->
     <script src="assets/js/demos/demo-4.js"></script>
     <script src="assets/js/main.js"></script>

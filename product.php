@@ -12,7 +12,6 @@ include 'header-files.php';
         include 'header.php';
         ?>
         <?php
-        $baseUrl ='http://localhost/header-files/product.php/';
         $mainRecords = array();
         $nonMainRecords = array();
         // Get the current URL
@@ -154,7 +153,7 @@ if ($resultProd->num_rows > 0) {
                                     
                                             <div class='social-icons social-icons-sm'>
                                                 <span class='social-label'>Share:</span>
-                                                <a href='https://www.facebook.com/share.php?u={$baseUrl}{$row["Slug"] }' class='social-icon' title='Facebook' target='_blank'><i
+                                                <a href='' id='fb-icon' class='social-icon' title='Facebook' target='_blank'><i
                                                         class='icon-facebook-f'></i></a>
                                               
                                             </div>
@@ -293,6 +292,13 @@ if ($resultProd->num_rows > 0) {
 include 'footer-files.php';
 ?>
 <script> $(document).ready(function (){
+    $('#fb-icon').on('click', function (e){
+    // let baseUrl ='https://staging.capricornestore.com/product.php?id=6-Energy-Pro';
+    let shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+    console.log(shareUrl)
+});
+
    $('.product-gallery-item').on('click', function (e) {
   
        let mainImage = document.getElementById('product-zoom');

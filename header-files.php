@@ -70,6 +70,10 @@
             width: 90%;
          text-align: center;
         }
+        .logo-foo{
+        text-align: left;
+
+        }
         .header-center{
             display: none;
         }
