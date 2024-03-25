@@ -62,7 +62,7 @@ if ($resultProd->num_rows > 0) {
                                              foreach ($mainRecords as $record) {
 
                                                 echo "<a id='product-zoom' href='#' data-image='{$record["ImageURL"]}' data-zoom-image='{$record["ImageURL"]}'>
-                                                <img src='{$record["ImageURL"]}' alt='product cross'>
+                                                <img id='zoom-image' src='{$record["ImageURL"]}' alt='product cross'>
                                             </a>";
                                             }
                                           
@@ -70,7 +70,7 @@ if ($resultProd->num_rows > 0) {
                                             
 
 
-                                                    <a href="#" id="btn-product-gallery" class="btn-product-gallery">
+                                                    <a id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
                                             </a>
                                         </figure><!-- End .product-main-image -->
@@ -94,7 +94,7 @@ if ($resultProd->num_rows > 0) {
                                              foreach ($nonMainRecords as $record) {
                                                 echo "
                                                                          
-                                                <a class='product-gallery-item' href='#' data-image={$record["ImageURL"]} data-zoom-image={$record["ImageURL"]}>
+                                                <a class='product-gallery-item ' href='#' data-image={$record["ImageURL"]} data-zoom-image={$record["ImageURL"]}>
                                                     <img src={$record["ImageURL"]} alt='product cross'>
                                                 </a>
                    
@@ -285,9 +285,30 @@ if ($resultProd->num_rows > 0) {
         include 'footer.php';
         ?>
     </div>
-</body>
 <?php
 include 'footer-files.php';
 ?>
+<script> $(document).ready(function (){
+   $('.product-gallery-item').on('click', function (e) {
+    console.log(e.target);
+  
+       let mainImage = document.getElementById('product-zoom');
+       let mainSrc =document.getElementById('zoom-image');
+       let newSrc = e.target.getAttribute('data-image') || e.target.src; 
+       let newImageUrl = document.getElementById('product-zoom').getAttribute('data-image');
+        mainImage.setAttribute('data-image',newSrc || e.target.src)
+        mainSrc.src =newSrc
+
+
+            $('#product-zoom-gallery').find('a').removeClass('active');
+            $(this).addClass('active');
+
+            e.preventDefault();
+        });
+    
+
+})
+</script>
+</body>
 
 </html>

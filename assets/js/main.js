@@ -1,5 +1,6 @@
 // Main Js File
 $(document).ready(function () {
+    console.log("hi")
     'use strict';
 
     owlCarousels();
