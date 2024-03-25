@@ -41,17 +41,15 @@ include 'header-files.php';
 						 while ($rowComp = $resultComp->fetch_assoc()) {
                            echo "<div class='col-lg-6 mb-2 mb-lg-0'>
 						   <h2 class='title mb-1'>Contact Information</h2><!-- End .title mb-2 -->
-						   <p class='mb-3'>Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+						   <p class='mb-3'>
+						   Contact us for inquiries and assistance. We're here to help with any questions or concerns you may have regarding our services and products.</p>
 						   <div class='row'>
 							   <div class='col-sm-7'>
 								   <div class='contact-info'>
 									   <h3>The Office</h3>
 					   
 									   <ul class='contact-list'>
-										   <li>
-											   <i class='icon-map-marker'></i>
-											   {$rowComp["address"]}
-										   </li>
+										
 										   <li>
 											   <i class='icon-phone'></i>
 											   <a href='tel:#'>{$rowComp["phone"]}</a>
@@ -71,11 +69,11 @@ include 'header-files.php';
 									   <ul class='contact-list'>
 										   <li>
 											   <i class='icon-clock-o'></i>
-											   <span class='text-dark'>Monday-Saturday</span> <br>11am-7pm ET
+											   <span class='text-dark'>Monday-Saturday</span> <br>11am-7pm 
 										   </li>
 										   <li>
 											   <i class='icon-calendar'></i>
-											   <span class='text-dark'>Sunday</span> <br>11am-6pm ET
+											   <span class='text-dark'>Sunday</span> <br>11am-6pm 
 										   </li>
 									   </ul><!-- End .contact-list -->
 								   </div><!-- End .contact-info -->
@@ -129,9 +127,10 @@ include 'header-files.php';
 
                 
                 </div><!-- End .container -->
-            	<div id="map">
+            	<!-- <div id="map">
 					
-				</div><!-- End #map -->
+				</div> -->
+				<!-- End #map -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 

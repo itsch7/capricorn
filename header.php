@@ -142,11 +142,11 @@ include ('dbcon.php');
                             <a href="about.php" class="sf-with-ul">About</a>
 
                         </li>
+                        <li><a href="faq.php">FAQs</a></li>
                         <li>
-                            <a href="contact.php" class="sf-with-ul">Contact</a>
+                            <a href="contact.php" class="sf-with-ul">Contact Us</a>
 
                         </li>
-                        <li><a href="faq.php">FAQs</a></li>
                         <!-- <li>
                             <a href="#" class="sf-with-ul sf-with-ul-pg">Pages</a>
 
@@ -206,13 +206,13 @@ include ('dbcon.php');
 
 
                         </li>
+                        <li><a href="faq.php">FAQs</a></li>
+                        
                         <li>
-                            <a href="contact.php">Contact</a>
+                            <a href="contact.php">Contact Us</a>
 
 
                         </li>
-                        <li><a href="faq.php">FAQs</a></li>
-
 
                     </ul>
                 </nav><!-- End .mobile-nav -->

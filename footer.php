@@ -29,7 +29,7 @@ if (strpos($currentUrl, 'faq.php') !== false) {
 <footer class="footer">
 <?php if (!$hideSection): ?>
 	<div class='cta bg-image bg-dark pt-4 pb-5 mb-0'
-style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
+>
 <div class='container'>
     <div class='row justify-content-center'>
         <div class='col-sm-10 col-md-8 col-lg-6'>
@@ -58,12 +58,16 @@ style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
 	<div class="footer-middle">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-lg-3">
+				<div class="col-sm-6 col-lg-4">
 					<div class="widget widget-about">
-						<a href="#">
-							<p class='logo logo-foo' style="font-size:24px">𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊</p>
+						<div class="widget-footer">
+							<a href="#">
+								<p class='logo logo-foo' style="font-size:28px;margin-bottom:0;line-height: 36px;">𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊</p>
+	
+							</a>
+							<span style="color: #3398fd;">We deliver the best</span>
 
-						</a>
+						</div>
 						<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros
 							eu erat. </p>
 
@@ -71,7 +75,7 @@ style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
 					</div><!-- End .widget about-widget -->
 				</div><!-- End .col-sm-6 col-lg-3 -->
 
-				<div class="col-sm-6 col-lg-3">
+				<div class="col-sm-6 col-lg-4">
 					<div class="widget">
 						<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
@@ -83,7 +87,7 @@ style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
 					</div><!-- End .widget -->
 				</div><!-- End .col-sm-6 col-lg-3 -->
 
-				<div class="col-sm-6 col-lg-3">
+				<div class="col-sm-6 col-lg-4">
 					<div class="widget">
 					<div class="widget-call">
 							<i class="icon-phone"></i>
@@ -111,7 +115,7 @@ style='background-image: url(assets/images/demos/demo-4/bg-5.jpg);'>
 
 	<div class="footer-bottom">
 		<div class="container">
-			<p class="footer-copyright">Copyright © 2019 Capricorn Store. All Rights Reserved.</p>
+			<p class="footer-copyright">Copyright © 2024 Capricorn Store. All Rights Reserved.</p>
 			<!-- End .footer-copyright -->
 
 		</div><!-- End .container -->

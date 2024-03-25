@@ -12,6 +12,7 @@ include 'header-files.php';
         include 'header.php';
         ?>
         <?php
+        $baseUrl ='http://localhost/header-files/product.php/';
         $mainRecords = array();
         $nonMainRecords = array();
         // Get the current URL
@@ -45,7 +46,11 @@ if ($resultProd->num_rows > 0) {
 
         $sqlProReview = "SELECT p.*,r.review_text,r.reviewer_name,r.review_title,r.review_date from products p inner join reviews r on p.ProductID = r.product_id  where p.ProductID ='$id'";
         $resultsqlProReview = $conn->query($sqlProReview);
-
+        $sql = "SELECT p.ProductID,p.Slug, p.Name as ProductName,p.Price  , c.Name as CategoryName, pi.ImageURL
+        FROM products p
+        JOIN categories c ON p.CategoryID = c.CategoryID
+        LEFT JOIN productimages pi ON p.ProductID = pi.ProductID where pi.isMain =true";
+        $result = $conn->query($sql);
 
         ?>
         <main class="main" style="margin-top:40px">
@@ -126,7 +131,7 @@ if ($resultProd->num_rows > 0) {
                                        
                                     
                                         <div class='product-price'>
-                                        {$row["Price"]}
+                                        $ {$row["Price"]}
                                         </div>
                                     
                                         <div class='product-content'>
@@ -149,7 +154,7 @@ if ($resultProd->num_rows > 0) {
                                     
                                             <div class='social-icons social-icons-sm'>
                                                 <span class='social-label'>Share:</span>
-                                                <a href='#' class='social-icon' title='Facebook' target='_blank'><i
+                                                <a href='https://www.facebook.com/share.php?u={$baseUrl}{$row["Slug"] }' class='social-icon' title='Facebook' target='_blank'><i
                                                         class='icon-facebook-f'></i></a>
                                               
                                             </div>
@@ -167,13 +172,9 @@ if ($resultProd->num_rows > 0) {
                         </div><!-- End .row -->
                     </div><!-- End .product-details-top -->
 
-                    <div class="product-details-tab">
-                        <ul class="nav nav-pills justify-content-center" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="product-desc-link" data-toggle="tab"
-                                    href="#product-desc-tab" role="tab" aria-controls="product-desc-tab"
-                                    aria-selected="true">Description</a>
-                            </li>
+                    <!-- <div class="product-details-tab">
+                        <ul class="nav nav-pills justify-content-center" role="tablist"> -->
+                         
                             <!-- <li class="nav-item">
                                 <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab"
                                     role="tab" aria-controls="product-info-tab" aria-selected="false">Additional
@@ -189,97 +190,100 @@ if ($resultProd->num_rows > 0) {
                                     href="#product-review-tab" role="tab" aria-controls="product-review-tab"
                                     aria-selected="false">Reviews (<?php echo $resultsqlProReview->num_rows; ?>)</a>
                             </li> -->
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel"
-                                aria-labelledby="product-desc-link">
-                                <div class="product-desc-content">
-                                    <h3>Product Information</h3>
-                                    <?php
-                                // Check if any records are fetched
-                                    // Output data of each row
-
-                                        echo $description;
-                              
-
-                                     ?>
-                                    
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- .End .tab-pane -->
-                            <div class="tab-pane fade" id="product-info-tab" role="tabpanel"
-                                aria-labelledby="product-info-link">
-                                <div class="product-desc-content">
-                                    <h3>Information</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-                                        volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra
-                                        non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis
-                                        fermentum. Aliquam porttitor mauris sit amet orci. </p>
-
-
-
-
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- .End .tab-pane -->
-                            <div class="tab-pane fade" id="product-shipping-tab" role="tabpanel"
-                                aria-labelledby="product-shipping-link">
-                                <div class="product-desc-content">
-                                    <h3>Delivery & returns</h3>
-                                    <p>We deliver to over 100 countries around the world. For full details of the
-                                        delivery options we offer, please view our <a href="#">Delivery
-                                            information</a><br>
-                                        We hope you’ll love every purchase, but if you ever need to return an item you
-                                        can do so within a month of receipt. For full details of how to make a return,
-                                        please view our <a href="#">Returns information</a></p>
-                                </div><!-- End .product-desc-content -->
-                            </div><!-- .End .tab-pane -->
-                            <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
-                                aria-labelledby="product-review-link">
-                                <div class="reviews">
-
-                                    <h3>Reviews
-                                        <?php echo $resultsqlProReview->num_rows; ?>
-                                    </h3>
-                                    <?php if ($resultsqlProReview->num_rows > 0) {
-                                        // Output data of each row
-                                        while ($row = $resultsqlProReview->fetch_assoc()) {
-                                            echo "<div class='review'>
-                                        <div class='row no-gutters'>
-                                            <div class='col-auto'>
-                                                <h4><a href='#'>{$row["reviewer_name"]}</a></h4>
-                                                <div class='ratings-container'>
-                                                    <div class='ratings'>
-                                                        <div class='ratings-val' style='width: 80%;'></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div><!-- End .ratings -->
-                                                </div><!-- End .rating-container -->
-                                                <span class='review-date'>6 days ago</span>
-                                            </div><!-- End .col -->
-                                            <div class='col'>
-                                                <h4>{$row["review_title"]}</h4>
-                                    
-                                                <div class='review-content'>
-                                                    <p>{$row["review_text"]}</p>
-                                                </div><!-- End .review-content -->
-                                    
-                                                <div class='review-action'>
-                                                    <a href='#'><i class='icon-thumbs-up'></i>Helpful (2)</a>
-                                                    <a href='#'><i class='icon-thumbs-down'></i>Unhelpful (0)</a>
-                                                </div><!-- End .review-action -->
-                                            </div><!-- End .col-auto -->
-                                        </div><!-- End .row -->
-                                    </div>";
-                                        }
-                                    } ?>
-
-
-                                </div><!-- End .reviews -->
-                            </div><!-- .End .tab-pane -->
-                        </div><!-- End .tab-content -->
-                    </div><!-- End .product-details-tab -->
+                        <!-- </ul> -->
+                    
+                    <!-- </div> -->
+                    <!-- End .product-details-tab -->
 
 
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
+            <div class="mb-3"></div><!-- End .mb-5 -->
+
+<div class="container new-arrivals">
+    <div class="heading heading-flex mb-3" style="justify-content:center">
+        <div class="heading-left">
+            <h2 class="title">You May Also Like</h2><!-- End .title -->
+        </div><!-- End .heading-left -->
+
+    
+    </div><!-- End .heading -->
+
+    <div class="tab-content tab-content-carousel just-action-icons-sm">
+        <div class="tab-pane p-0 fade show active" id="new-all-tab" role="tabpanel" aria-labelledby="new-all-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl" 
+                data-owl-options='{
+                    "nav": true, 
+                    "dots": true,
+                    "margin": 20,
+                    "loop": false,
+                    "responsive": {
+                        "0": {
+                            "items":2
+                        },
+                        "480": {
+                            "items":2
+                        },
+                        "768": {
+                            "items":3
+                        },
+                        "992": {
+                            "items":4
+                        },
+                        "1200": {
+                            "items":5
+                        }
+                    }
+                }'>
+
+                <?php
+// Check if any records are fetched
+             if ($result->num_rows > 0) {
+// Output data of each row
+            while($row = $result->fetch_assoc()) {
+
+                        echo "<div class='product product-2'>
+                        <figure class='product-media'>
+                            <span class='product-label label-circle label-top'>Top</span>
+                            <span class='product-label label-circle label-sale'>Sale</span>
+                            <a href='product.php?id=" . $row["Slug"] . "'>
+                                <img src={$row["ImageURL"]} alt='Product image' class='product-image'>
+                            </a>
+                        </figure><!-- End .product-media -->
+                    
+                        <div class='product-body'>
+                            <div class='product-cat'>
+                                <a href='#'>{$row["CategoryName"]}</a>
+                            </div>
+                            <h3 class='product-title'><a href='product.php?id=" . $row["Slug"] . "'>{$row["ProductName"]}</h3>
+                            <div class='product-price'>
+                                <span class='new-price'>$ {$row["Price"]}</span>
+
+                            </div>
+                       
+                    
+                        </div>
+                    </div>";
+
+                    }
+                } else {
+                    echo "0 results";
+                }
+
+                ?>
+                
+           
+            </div><!-- End .owl-carousel -->
+        </div><!-- .End .tab-pane -->
+      
+    
+        
+  
+     
+    </div><!-- End .tab-content -->
+</div><!-- End .container -->
+<div class="mb-3"></div><!-- End .mb-5 -->
+
         </main><!-- End .main -->
         <?php
         include 'footer.php';
