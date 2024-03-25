@@ -61,8 +61,25 @@
         .icon-header-phone{
             display:none;
         }
+        .mobile-menu-toggler{
+            width: 10%;
+    margin-right: 0;
+        }
         .logo{
             margin:0;
+            width: 90%;
+         text-align: center;
+        }
+        .header-center{
+            display: none;
+        }
+        .header-right{
+            display: none;
+        }
+        .header-left{
+            flex: unset!important;
+            max-width: unset!important;
+            width: 100%;
         }
     }
 </style>
