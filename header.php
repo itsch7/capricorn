@@ -41,7 +41,7 @@ include ('dbcon.php');
                 <a href="index.php" class="logo" style="font-size:36px">
                     <!-- <img src="assets/images/demos/demo-4/logo.png" alt="Molla Logo" width="105" height="25">
                             -->
-                    𝖈𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕾𝖙𝖔r𝖊
+                            𝕮𝖆𝖕𝖗𝖎𝖈𝖔𝖗𝖓 𝕰𝖘𝖙𝖔𝖗𝖊
                 </a>
             </div><!-- End .header-left -->
 
